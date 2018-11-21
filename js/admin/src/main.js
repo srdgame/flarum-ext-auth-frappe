@@ -1,8 +1,8 @@
 import { extend } from 'flarum/extend';
 import app from 'flarum/app';
 
-import ERPNextSettingsModal from 'srdgame/auth-erpnext/components/ERPNextSettingsModal';
+import FrappeSettingsModal from 'srdgame/auth-frappe/components/FrappeSettingsModal';
 
-app.initializers.add('srdgame/auth-erpnext', app => {
-  app.extensionSettings['srdgame-auth-erpnext'] = () => app.modal.show(new ERPNextSettingsModal());
+app.initializers.add('srdgame/auth-frappe', app => {
+  app.extensionSettings['srdgame-auth-frappe'] = () => app.modal.show(new FrappeSettingsModal());
 });

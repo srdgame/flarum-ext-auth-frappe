@@ -3,14 +3,14 @@ import app from 'flarum/app';
 import LogInButtons from 'flarum/components/LogInButtons';
 import LogInButton from 'flarum/components/LogInButton';
 
-app.initializers.add('srdgame/auth-erpnext', () => {
+app.initializers.add('srdgame/auth-frappe', () => {
   extend(LogInButtons.prototype, 'items', function(items) {
-    items.add('erpnext',
+    items.add('frappe',
       <LogInButton
-        className="Button LogInButton--erpnext"
-        icon="erpnext"
-        path="/auth/erpnext">
-        {app.translator.trans('srdgame-auth-erpnext.forum.log_in.with_erpnext_button')}
+        className="Button LogInButton--frappe"
+        icon="frappe"
+        path="/auth/frappe">
+        {app.translator.trans('srdgame-auth-frappe.forum.log_in.with_frappe_button')}
       </LogInButton>
     );
   });

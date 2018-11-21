@@ -1,6 +1,6 @@
 <?php
 
-namespace Srdgame\Auth\ERPNext;
+namespace Srdgame\Auth\Frappe;
 
 use Flarum\Forum\AuthenticationResponseFactory;
 use Flarum\Forum\Controller\AbstractOAuth2Controller;
@@ -8,34 +8,34 @@ use Flarum\Settings\SettingsRepositoryInterface;
 use League\OAuth2\Client\Provider\GenericProvider;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
-class ERPNextAuthController extends AbstractOAuth2Controller
+class FrappeAuthController extends AbstractOAuth2Controller
 {
     /**
      * @var SettingsRepositoryInterface
      */
     protected $settings;
 
-	public function getERPNextDomain()
+	public function getFrappeDomain()
 	{
-		return $this->settings->get('srdgame-auth-erpnext.app_domain');
+		return $this->settings->get('srdgame-auth-frappe.app_domain');
 	}
 
-	public function getERPNextApiDomain()
+	public function getFrappeApiDomain()
 	{
-		return $this->getERPNextDomain().'/api/method';
+		return $this->getFrappeDomain().'/api/method';
 	}
 
 	public function getAuthorizeUrl()
 	{
-		return $this->getERPNextApiDomain().'/frappe.integrations.oauth2.authorize';
+		return $this->getFrappeApiDomain().'/frappe.integrations.oauth2.authorize';
 	}
 	public function getAccessTokenUrl()
 	{
-			return $this->getERPNextApiDomain().'/frappe.integrations.oauth2.get_token';
+			return $this->getFrappeApiDomain().'/frappe.integrations.oauth2.get_token';
 	}
 	public function getResourceOwnerDetailsUrl()
 	{
-		return $this->getERPNextApiDomain().'/frappe.integrations.oauth2.openid_profile';
+		return $this->getFrappeApiDomain().'/frappe.integrations.oauth2.openid_profile';
 	}
 
 
@@ -55,11 +55,12 @@ class ERPNextAuthController extends AbstractOAuth2Controller
     protected function getProvider($redirectUri)
     {
         return new GenericProvider([
-            'clientId'        => $this->settings->get('srdgame-auth-erpnext.app_id'),
-            'clientSecret'    => $this->settings->get('srdgame-auth-erpnext.app_secret'),
+            'clientId'        => $this->settings->get('srdgame-auth-frappe.app_id'),
+            'clientSecret'    => $this->settings->get('srdgame-auth-frappe.app_secret'),
             'redirectUri'     => $redirectUri,
             'approvalPrompt'  => 'force',
-            'hostedDomain'    => $this->settings->get('srdgame-auth-erpnext.app_domain'),
+            'hostedDomain'    => $this->settings->get('srdgame-auth-frappe.app_domain'),
+            'hostedName'    => $this->settings->get('srdgame-auth-frappe.app_name'),
 			'urlAuthorize'    => $this->getAuthorizeUrl(),
 			'urlAccessToken'  => $this->getAccessTokenUrl(),
 			'urlResourceOwnerDetails' => $this->getResourceOwnerDetailsUrl(),

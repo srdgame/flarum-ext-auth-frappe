@@ -1,9 +1,9 @@
 <?php
 
-use Srdgame\Auth\ERPNext\Listener;
+use Srdgame\Auth\Frappe\Listener;
 use Illuminate\Contracts\Events\Dispatcher;
 
 return function (Dispatcher $events) {
     $events->subscribe(Listener\AddClientAssets::class);
-    $events->subscribe(Listener\AddERPNextAuthRoute::class);
+    $events->subscribe(Listener\AddFrappeAuthRoute::class);
 };

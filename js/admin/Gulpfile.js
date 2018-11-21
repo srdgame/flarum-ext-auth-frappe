@@ -2,7 +2,7 @@ var gulp = require('flarum-gulp');
 
 gulp({
   modules: {
-    'srdgame/auth-erpnext': [
+    'srdgame/auth-frappe': [
       'src/**/*.js'
     ]
   }

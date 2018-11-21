@@ -1,12 +1,13 @@
-srdgame-auth-erpnext:
+srdgame-auth-frappe:
 
   admin:
-    erpnext_settings:
-      title: "ERPNext Settings"
+    frappe_settings:
+      title: "Frappe Settings"
       client_id_label: "Client ID"
       client_secret_label: "Client Secret"
       hosted_domain_label: "Hosted Domain"
+      hosted_name_label: "Hosted Name"
 
   forum:
     log_in:
-      with_erpnext_button: "Login with ERPNext"
+      with_frappe_button: "Login with Frappe"

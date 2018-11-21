@@ -1,6 +1,6 @@
 <?php
 
-namespace Srdgame\Auth\ERPNext\Listener;
+namespace Srdgame\Auth\Frappe\Listener;
 
 use DirectoryIterator;
 use Flarum\Event\ConfigureClientView;
@@ -28,14 +28,14 @@ class AddClientAssets
                 __DIR__.'/../../js/forum/dist/extension.js',
                 __DIR__.'/../../less/forum/extension.less'
             ]);
-            $event->addBootstrapper('srdgame/auth-erpnext/main');
+            $event->addBootstrapper('srdgame/auth-frappe/main');
         }
 
         if ($event->isAdmin()) {
             $event->addAssets([
                 __DIR__.'/../../js/admin/dist/extension.js'
             ]);
-            $event->addBootstrapper('srdgame/auth-erpnext/main');
+            $event->addBootstrapper('srdgame/auth-frappe/main');
         }
     }
 

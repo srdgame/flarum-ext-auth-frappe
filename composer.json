@@ -1,6 +1,6 @@
 {
-    "name": "srdgame/flarum-ext-auth-erpnext",
-    "description": "Allow users to log in with ERPNext.",
+    "name": "srdgame/flarum-ext-auth-frappe",
+    "description": "Allow users to log in with Frappe.",
     "type": "flarum-extension",
     "keywords": ["authentication"],
     "license": "GPL-3.0+",
@@ -12,8 +12,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/srdgame/flarum-ext-auth-erpnext/issues",
-        "source": "https://github.com/srdgame/flarum-ext-auth-erpnext"
+        "issues": "https://github.com/srdgame/flarum-ext-auth-frappe/issues",
+        "source": "https://github.com/srdgame/flarum-ext-auth-frappe"
     },
     "require": {
         "flarum/core": "^0.1.0-beta.6",
@@ -21,14 +21,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Srdgame\\Auth\\ERPNext\\": "src/"
+            "Srdgame\\Auth\\Frappe\\": "src/"
         }
     },
     "extra": {
         "flarum-extension": {
-            "title": "ERPNext Login",
+            "title": "Frappe Login",
             "icon": {
-                "name": "erpnext",
+                "name": "frappe",
                 "backgroundColor": "#D13E32",
                 "color": "#fff"
             }

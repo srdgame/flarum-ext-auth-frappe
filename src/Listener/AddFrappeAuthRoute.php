@@ -1,11 +1,11 @@
 <?php
 
-namespace Srdgame\Auth\ERPNext\Listener;
+namespace Srdgame\Auth\Frappe\Listener;
 
 use Flarum\Event\ConfigureForumRoutes;
 use Illuminate\Contracts\Events\Dispatcher;
 
-class AddERPNextAuthRoute
+class AddFrappeAuthRoute
 {
     /**
      * @param Dispatcher $events
@@ -20,6 +20,6 @@ class AddERPNextAuthRoute
      */
     public function configureForumRoutes(ConfigureForumRoutes $event)
     {
-        $event->get('/auth/erpnext', 'auth.erpnext', 'Srdgame\Auth\ERPNext\ERPNextAuthController');
+        $event->get('/auth/frappe', 'auth.frappe', 'Srdgame\Auth\Frappe\FrappeAuthController');
     }
 }
